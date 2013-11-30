@@ -1,0 +1,39 @@
+h1. Jekyll Shell Command
+
+
+This Jekyll plugin simply renders the output of any arbitrary shell command.
+
+_Be very careful when using it._
+
+
+
+h2. Installation
+
+Set the constant @PATH_TO_JEKYLL_SITE@ correctly and run these commands accordingly:
+
+pre. cd ${PATH_TO_JEKYLL_SITE}
+echo "gem 'jekyll_shell_command'" >> Gemfile
+bundle
+echo "require 'jekyll_shell_command'" >> _plugins/ext.rb
+
+
+*Alternatively* you may accomplish the same without @echo@ and @bundle@:
+
+# Install the plugin by running @gem install jekyll_shell_command@
+# Add the line @require 'jekyll_shell_command'@ to *_plugins/ext.rb*
+
+
+
+h2. Usage
+
+pre.. # Basic usage
+{% sh whoami %}
+
+# Rendering output of a script
+{% sh PATH_TO/some_shell_script.sh %}
+
+
+
+h2. License
+
+**Jekyll Shell Command** is released under the "MIT License":http://www.opensource.org/licenses/MIT.
